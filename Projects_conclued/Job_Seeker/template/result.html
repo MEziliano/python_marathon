@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Maratona Job Scraping</title>
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <header>
+      <h1>Maratona Job Scraping</h1>
+      <div>
+        <p>vagas de <strong>{{keyword}}</strong></p>
+        <a href="/download/result">Baixar resultados em csv</a>
+     </div>
+    </header>
+     <main>
+  {% for job in jobs %}
+      <div>
+        <div>
+          <h3>{{job.title}}</h3>
+          <h4>{{job.company}}</h4>
+          <p><strong>Localização:</strong> {{job.location}}</p>
+          <p><strong>Publicado em:</strong> {{job.how_old}}</p>
+          <a href="{{job.link}}" target="_blank">
+          Aplicar para vaga -->
+          </a>
+        </div>
+      </div>
+      <hr />
+  {% endfor %}
+     </main>
+  </body>
+</html>
